@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root {
+	--transition: all 0.3s linear;
+	--radius: 0.5rem;
+	--white: #fff;
+	--clr-red-dark: hsl(360, 67%, 44%);
+	--clr-red-light: hsl(360, 71%, 66%);
+	--clr-green-dark: hsl(125, 67%, 44%);
+	--clr-green-light: hsl(125, 71%, 66%);
+	--clr-primary-1: #49a6e9;
+	--clr-primary-2: hsl(205, 86%, 81%);
+	--clr-grey-1: hsl(210, 36%, 96%);
+	--clr-grey-2: hsl(210, 22%, 49%);
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	background: #f1f5f8;
+}
+.grocery-items {
+	width: 90vw;
+	margin: 0 auto;
+	max-width: 35rem;
+	margin-top: 8rem;
+	padding: 2rem;
+	background: var(--white);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ---FORM--- */
+.grocery-form {
+	text-align: center;
+}
+.form-title {
+	font-size: 1.7rem;
+	font-style: italic;
+	text-transform: capitalize;
+	letter-spacing: 0.3rem;
+	padding-bottom: 30px;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+@media screen and (max-width: 767px) {
+	.form-title {
+		font-size: 1.2rem;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+	}
+}
+.alert {
+	display: grid;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto 1rem;
+	height: 2rem;
+	padding: 5px;
+	max-width: 20rem;
+	font-size: 1rem;
+	border-radius: 0.25rem;
+	text-transform: capitalize;
+}
+.alert-success {
+	color: #155724;
+	background: #d4edda;
+}
+.alert-danger {
+	color: #721c24;
+	background: #f8d7da;
+}
+
+/* ---Form-Control--- */
+.form-control {
+	display: flex;
+	justify-content: center;
+}
+.form-control #grocery {
+	padding: 0.25rem;
+	padding-left: 1rem;
+	background: var(--clr-grey-1);
+	border-top-left-radius: var(--radius);
+	border-bottom-left-radius: var(--radius);
+	border-color: transparent;
+	font-size: 1rem;
+	flex: 1 0 auto;
+	color: var(--clr-grey-2);
+	outline: none;
+}
+.form-control #grocery::placeholder {
+	color: var(--clr-grey-2);
+}
+.form-control .submit-btn {
+	background: var(--clr-primary-2);
+	border-color: transparent;
+	flex: 0 0 5rem;
+	display: grid;
+	align-items: center;
+	padding: 0.25rem;
+	text-transform: capitalize;
+	letter-spacing: 0.25rem;
+	border-top-right-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
+	cursor: pointer;
+
+	transition: var(--transition);
+	font-size: 0.95rem;
+}
+.submit-btn:hover {
+	background: var(--clr-primary-1);
+	color: var(--white);
+}
+.submit-btn:focus {
+	outline: none;
+}
+
+/* ---Grocery Conteiner--- */
+.grocery-container {
+	margin-top: 2rem;
+	transition: var(--transition);
+	visibility: hidden;
+}
+.show-container {
+	visibility: visible;
+}
+.grocery-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+	transition: var(--transition);
+	padding: 0.25rem 1rem;
+	border-radius: 0.5rem;
+}
+.edit-btn,
+.delete-btn {
+	background: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	font-size: 1.1rem;
+	border: 0;
+	outline: none;
+	margin: 0 0.15rem;
+	transition: var(--transition);
+}
+.edit-btn {
+	color: var(--clr-green-light);
+}
+.edit-btn:hover {
+	color: var(--clr-green-dark);
+}
+
+.delete-btn {
+	color: var(--clr-red-light);
+}
+.delete-btn:hover {
+	color: var(--clr-red-dark);
+}
+.clear-btn {
+	text-transform: capitalize;
+	width: 10rem;
+	height: 1.5rem;
+	display: grid;
+	align-items: center;
+	background: transparent;
+	border-color: transparent;
+	color: var(--clr-red-light);
+	margin: 0 auto;
+	font-weight: bold;
+	font-size: 1rem;
+	letter-spacing: 0.25rem;
+	cursor: pointer;
+	transition: var(--transition);
+	margin-top: 1.25rem;
+	outline: none;
+}
+.clear-btn:hover {
+	color: var(--clr-red-dark);
+}
